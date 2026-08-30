@@ -8,6 +8,7 @@ import generate_game_cdn
 import generate_rules
 import generate_stash_configs
 import extract_uu_game_routes
+import sync_custom_clash
 import update_encrypted_dns
 
 
@@ -320,6 +321,47 @@ class StashConfigGenerationTests(unittest.TestCase):
                 "custom_proxy_group=A`select`[]B\n"
                 "custom_proxy_group=B`select`[]A\n"
             )
+
+    def test_projects_inline_domain_rules(self) -> None:
+        self.assertEqual(
+            generate_stash_configs.project_ruleset_line(
+                "ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me", ""
+            ),
+            ("ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me",),
+        )
+        self.assertEqual(
+            generate_stash_configs.project_ruleset_line(
+                "ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me", ""
+            ),
+            ("ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me",),
+        )
+
+
+class CustomClashSyncTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.source = (
+            Path(__file__).resolve().parents[1] / "cfg" / "Custom_Clash.ini"
+        ).read_text(encoding="utf-8")
+
+    def test_merge_adds_onevoid_block_once(self) -> None:
+        merged = sync_custom_clash.merge_upstream_config(self.source)
+        self.assertEqual(merged.count(sync_custom_clash.ONEVOID_BEGIN), 1)
+        self.assertEqual(
+            merged.count("ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me"), 1
+        )
+        self.assertLess(
+            merged.index("ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me"),
+            merged.index("ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me"),
+        )
+
+    def test_merge_is_idempotent(self) -> None:
+        merged = sync_custom_clash.merge_upstream_config(self.source)
+        self.assertEqual(sync_custom_clash.merge_upstream_config(merged), merged)
+
+    def test_merge_rejects_missing_custom_section(self) -> None:
+        with self.assertRaisesRegex(ValueError, "custom.*section"):
+            sync_custom_clash.merge_upstream_config("[other]\nkey=value\n")
 
 
 class UuRouteExtractionTests(unittest.TestCase):

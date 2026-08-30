@@ -52,6 +52,10 @@ OpenClash `dev` 分支的内置列表已收录本仓库全部 8 个模板的远�
 
 [`Custom_Clash_Mainland.ini`](./Custom_Clash_Mainland.ini) 是由统一兼容配置生成流程从 `Custom_Clash.ini` 自动同步的文件，不是独立配置版本。不要直接修改该文件。
 
+### OneVoid 自定义追加
+
+`Custom_Clash.ini` 由 [`py/sync_custom_clash.py`](../py/sync_custom_clash.py) 定时从 Aethersailor 上游同步，并在同一个 `[custom]` 段中幂等追加 OneVoid 规则和策略组。标记区块位于 `BEGIN OneVoid additions` 与 `END OneVoid additions` 之间，请勿手动编辑；同步完成后会自动重新生成 Stash 兼容模板。
+
 ## 📊 版本区别
 
 | 系列 | 特点 | 建议 |

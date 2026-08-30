@@ -1,0 +1,61 @@
+name: Sync Custom Clash with OneVoid
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: main-writers
+
+jobs:
+  sync-custom-clash:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout latest main branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+
+      - name: Synchronize upstream Clash template
+        run: python py/sync_custom_clash.py
+
+      - name: Generate and validate Stash compatibility templates
+        run: |
+          python py/generate_stash_configs.py
+          python py/sync_custom_clash.py --check
+          python py/generate_stash_configs.py --check
+          python -m unittest discover -s py -p 'test_rule_generation.py'
+          git diff --check
+
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          generated_pathspecs=(
+            'cfg/Custom_Clash.ini'
+            'cfg/Custom_Clash_Mainland.ini'
+            ':(glob)cfg/Custom_Stash*.ini'
+          )
+
+          if [ -z "$(git status --porcelain -- "${generated_pathspecs[@]}")" ]; then
+            echo "Upstream template and derived outputs are current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "${generated_pathspecs[@]}"
+          git commit -m "chore(cfg): sync upstream Clash template with OneVoid rules"
+          git pull --rebase origin main
+          git push origin HEAD:main

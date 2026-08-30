@@ -148,6 +148,10 @@ def project_ruleset_line(line: str, direct_source: str) -> tuple[str, ...]:
             if len(fields) != 2 or not fields[1]:
                 raise ValueError(f"unsupported inline GEOSITE rule: {line}")
             return (line,)
+        if rule_type in {"DOMAIN", "DOMAIN-SUFFIX"}:
+            if len(fields) != 2 or not fields[1]:
+                raise ValueError(f"unsupported inline {rule_type} rule: {line}")
+            return (line,)
         if rule_type == "FINAL":
             if fields != ["FINAL"]:
                 raise ValueError(f"unsupported inline FINAL rule: {line}")
