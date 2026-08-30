@@ -25,7 +25,7 @@ ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me
 ; 其他 onevoid.me 域名进入自定义策略组
 ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me
 
-custom_proxy_group=🌌 OneVoid`select`[]🎯 全球直连`[]🚀 手动选择`[]♻️ 自动选择`[]🇭🇰 香港节点`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇸🇬 新加坡节点`[]🇼🇸 台湾节点`[]🇰🇷 韩国节点`.*
+custom_proxy_group=🌌 OneVoid`select`[]🚀 手动选择`[]♻️ 自动选择`[]🇭🇰 香港节点`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇸🇬 新加坡节点`[]🇼🇸 台湾节点`[]🇰🇷 韩国节点`[]🎯 全球直连`.*
 
 ; END OneVoid additions"""
 REQUIRED_GROUPS = frozenset(

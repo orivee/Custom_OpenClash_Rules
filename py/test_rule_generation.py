@@ -350,6 +350,10 @@ class CustomClashSyncTests(unittest.TestCase):
         self.assertEqual(
             merged.count("ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me"), 1
         )
+        self.assertIn(
+            "custom_proxy_group=🌌 OneVoid`select`[]🚀 手动选择`[]♻️ 自动选择`[]🇭🇰 香港节点`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇸🇬 新加坡节点`[]🇼🇸 台湾节点`[]🇰🇷 韩国节点`[]🎯 全球直连`.*",
+            merged,
+        )
         self.assertLess(
             merged.index("ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me"),
             merged.index("ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me"),
