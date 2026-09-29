@@ -300,6 +300,23 @@ class StashConfigGenerationTests(unittest.TestCase):
                         any("," in selector or "(?<" in selector for selector in selectors)
                     )
 
+    def test_accepts_current_and_legacy_benchmark_urls(self) -> None:
+        prefix = "custom_proxy_group=♻️ 自动选择`url-test`.*`"
+        suffix = "`300,,50"
+        for benchmark_url in generate_stash_configs.BENCHMARK_URLS:
+            with self.subTest(benchmark_url=benchmark_url):
+                rendered = generate_stash_configs.project_group_line(
+                    prefix + benchmark_url + suffix
+                )
+                self.assertNotIn(benchmark_url, rendered)
+
+    def test_accepts_current_and_legacy_select_pseudo_urls(self) -> None:
+        prefix = "custom_proxy_group=🎯 全球直连`select`[]DIRECT`"
+        for pseudo_url in generate_stash_configs.SELECT_PSEUDO_URLS:
+            with self.subTest(pseudo_url=pseudo_url):
+                rendered = generate_stash_configs.project_group_line(prefix + pseudo_url)
+                self.assertEqual(rendered, "custom_proxy_group=🎯 全球直连`select`[]DIRECT")
+
     def test_rejects_dangling_stash_policy_references(self) -> None:
         generate_stash_configs.validate_policy_reference_closure(
             "ruleset=Proxy,[]FINAL\n"

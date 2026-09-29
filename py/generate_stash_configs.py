@@ -52,7 +52,22 @@ SUPPORTED_SETTINGS = frozenset(
     {"enable_rule_generator=true", "overwrite_original_rules=true"}
 )
 BENCHMARK_URL = "https://cp.cloudflare.com/generate_204"
+BENCHMARK_URLS = frozenset(
+    {
+        BENCHMARK_URL,
+        # The upstream maintained template currently uses this endpoint;
+        # retain the Cloudflare URL above for older synchronized templates.
+        "https://www.gstatic.com/generate_204",
+    }
+)
 SELECT_PSEUDO_URL = "http://wifi.vivo.com.cn/generate_204"
+SELECT_PSEUDO_URLS = frozenset(
+    {
+        SELECT_PSEUDO_URL,
+        # Upstream uses the same gstatic endpoint as a removable select marker.
+        "https://www.gstatic.com/generate_204",
+    }
+)
 STASH_BUILTIN_POLICIES = frozenset({"DIRECT", "REJECT", "REJECT-DROP", "PASS"})
 
 # Every classical source is deliberately enumerated. A new source must choose an
@@ -300,16 +315,18 @@ def project_group_line(line: str) -> str:
     if group_type == "select":
         candidates = fields[2:]
         unexpected_urls = [value for value in candidates if value.startswith(("http://", "https://"))]
-        if unexpected_urls and unexpected_urls != [SELECT_PSEUDO_URL]:
+        if unexpected_urls and (
+            len(unexpected_urls) != 1 or unexpected_urls[0] not in SELECT_PSEUDO_URLS
+        ):
             raise ValueError(f"unexpected select-group URL for {group_name}: {unexpected_urls}")
-        candidates = [value for value in candidates if value != SELECT_PSEUDO_URL]
+        candidates = [value for value in candidates if value not in SELECT_PSEUDO_URLS]
         suffix: list[str] = []
     else:
         if len(fields) < 5:
             raise ValueError(f"incomplete benchmark group: {line}")
         candidates = fields[2:-2]
         benchmark_url, times = fields[-2:]
-        if benchmark_url != BENCHMARK_URL:
+        if benchmark_url not in BENCHMARK_URLS:
             raise ValueError(f"unexpected benchmark URL for {group_name}: {benchmark_url}")
         interval = times.split(",", 1)[0]
         if not interval.isdigit():
@@ -346,7 +363,7 @@ def validate_rendered(name: str, rendered: str) -> None:
     for line in rendered.splitlines():
         if not line.startswith("custom_proxy_group="):
             continue
-        if BENCHMARK_URL in line or SELECT_PSEUDO_URL in line:
+        if any(url in line for url in (*BENCHMARK_URLS, *SELECT_PSEUDO_URLS)):
             raise ValueError(f"{name}: Clash-only group URL leaked: {line}")
         selectors = group_dynamic_selectors(line)
         if len(selectors) > 1:
