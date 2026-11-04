@@ -1,0 +1,73 @@
+name: Sync upstream and OneVoid
+
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# main keeps this additive workflow; all existing upstream files stay unchanged.
+concurrency:
+  group: main-writers
+  cancel-in-progress: false
+
+jobs:
+  sync-main:
+    if: github.repository == 'orivee/Custom_OpenClash_Rules'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge upstream into main
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add upstream https://github.com/Aethersailor/Custom_OpenClash_Rules.git
+          git fetch --no-tags upstream main
+          git merge --no-edit upstream/main
+          git push origin HEAD:main
+
+  # GITHUB_TOKEN pushes do not trigger another push workflow. Continue explicitly.
+  update-onevoid:
+    needs: sync-main
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout latest personal branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: onevoid-custom
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13'
+
+      - name: Merge main and regenerate personal template
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch --no-tags origin main
+          git merge --no-commit --no-ff origin/main
+          python -B py/apply_onevoid.py
+          python -B -m unittest discover -s custom/onevoid -p 'test_*.py'
+          python -B py/apply_onevoid.py --check
+          git add -- custom/onevoid/Custom_Clash.ini
+          git diff --cached --check
+          if git rev-parse -q --verify MERGE_HEAD >/dev/null || ! git diff --cached --quiet; then
+            git commit -m 'chore: sync main and regenerate OneVoid template'
+          fi
+          git push origin HEAD:onevoid-custom
