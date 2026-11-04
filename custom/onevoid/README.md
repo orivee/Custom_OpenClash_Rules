@@ -40,8 +40,8 @@ fork 中的上游规则生成、游戏 CDN 更新、Dependabot 自动合并工�
 手动补跑或查看记录：
 
 ```bash
-gh workflow run sync-onevoid-upstream.yml --ref main
-gh run list --workflow sync-onevoid-upstream.yml
+gh workflow run sync-onevoid-upstream.yml --ref main --repo orivee/Custom_OpenClash_Rules
+gh run list --workflow sync-onevoid-upstream.yml --repo orivee/Custom_OpenClash_Rules
 ```
 
 ## 本地同步与生成
