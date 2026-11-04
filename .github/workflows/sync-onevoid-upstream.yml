@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 # main keeps this additive workflow; all existing upstream files stay unchanged.
 concurrency:
@@ -27,6 +27,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          ssh-key: ${{ secrets.ONEVOID_SYNC_SSH_KEY }}
 
       - name: Merge upstream into main
         run: |
@@ -38,7 +39,7 @@ jobs:
           git merge --no-edit upstream/main
           git push origin HEAD:main
 
-  # GITHUB_TOKEN pushes do not trigger another push workflow. Continue explicitly.
+  # Continue in the same run; a main push also queues a harmless no-change run.
   update-onevoid:
     needs: sync-main
     runs-on: ubuntu-latest
@@ -49,6 +50,7 @@ jobs:
         with:
           ref: onevoid-custom
           fetch-depth: 0
+          ssh-key: ${{ secrets.ONEVOID_SYNC_SSH_KEY }}
 
       - name: Set up Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
