@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""从本地上游标准模板生成独立的 OneVoid 个人模板。"""
+"""从本地上游标准模板生成含 OneVoid、Samsung 定制的个人模板。"""
 
 from __future__ import annotations
 
@@ -26,20 +26,38 @@ CANDIDATES = (
     "🇰🇷 韩国节点",
     "🎯 全球直连",
 )
+SAMSUNG_GROUP_NAME = "📱 Samsung"
+SAMSUNG_URL = (
+    "https://raw.githubusercontent.com/Keviin560/Shunt_Rules/"
+    "main/rule/Mihomo/Samsung.mrs"
+)
+SAMSUNG_RULE = f"ruleset={SAMSUNG_GROUP_NAME},clash-domain:{SAMSUNG_URL},86400"
+SAMSUNG_CANDIDATES = (
+    "♻️ 自动选择",
+    "🎯 全球直连",
+    *(name for name in CANDIDATES if name not in {"♻️ 自动选择", "🎯 全球直连"}),
+)
 RULES = (
     "ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me",
     "ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me",
+    SAMSUNG_RULE,
 )
-BEGIN = "; BEGIN OneVoid additions"
-END = "; END OneVoid additions"
+BEGIN = "; BEGIN personal additions"
+END = "; END personal additions"
 GROUP = "custom_proxy_group=" + GROUP_NAME + "`select`" + "`".join(
     "[]" + name for name in CANDIDATES
+) + "`.*"
+SAMSUNG_GROUP = "custom_proxy_group=" + SAMSUNG_GROUP_NAME + "`select`" + "`".join(
+    "[]" + name for name in SAMSUNG_CANDIDATES
 ) + "`.*"
 BLOCK = "\n".join((
     BEGIN,
     "; mail.onevoid.me 优先直连，其余 onevoid.me 域名使用 OneVoid 策略组",
-    *RULES,
+    *RULES[:2],
+    "; Samsung 域名使用独立策略组，远程规则每 24 小时更新",
+    SAMSUNG_RULE,
     GROUP,
+    SAMSUNG_GROUP,
     END,
 ))
 SECTION = re.compile(r"(?m)^[ \t]*\[([^\]\r\n]+)\][ \t]*(?:\r?\n|$)")
@@ -70,13 +88,12 @@ def render(source: str) -> str:
         raise ValueError("上游策略组名称重复：" + ", ".join(duplicates))
     if not any(line.startswith("ruleset=") for line in lines):
         raise ValueError("上游 [custom] 段缺少 ruleset 指令")
-    if BEGIN in source or END in source or GROUP_NAME in group_names:
-        raise ValueError("输入已含 OneVoid 定制，应读取未经定制的上游模板")
-    if any(
-        line.startswith("ruleset=") and "onevoid.me" in line.casefold()
-        for line in lines
-    ):
-        raise ValueError("上游已有 onevoid.me 规则，需要人工核对优先级")
+    markers = (BEGIN, END, "; BEGIN OneVoid additions", "; END OneVoid additions")
+    if any(marker in source for marker in markers) or {GROUP_NAME, SAMSUNG_GROUP_NAME} & set(group_names):
+        raise ValueError("输入已含个人定制，应读取未经定制的上游模板")
+    for domain in ("onevoid.me", "samsung"):
+        if any(line.startswith("ruleset=") and domain in line.casefold() for line in lines):
+            raise ValueError(f"上游已有 {domain} 规则，需要人工核对优先级")
 
     newline = "\r\n" if section.group(0).endswith("\r\n") else "\n"
     prefix = source[:section.end()]
@@ -114,14 +131,14 @@ def main(argv: list[str] | None = None) -> int:
             if not OUTPUT.exists() or OUTPUT.read_bytes() != expected:
                 print("个人模板缺失或已过期，请运行 python py/apply_onevoid.py", file=sys.stderr)
                 return 1
-            print("OneVoid 个人模板与当前上游输入一致")
+            print("个人模板与当前上游输入一致")
         elif OUTPUT.exists() and OUTPUT.read_bytes() == expected:
             print(f"无需更新：{OUTPUT.relative_to(ROOT)}")
         else:
             write_atomically(OUTPUT, expected)
             print(f"已生成：{OUTPUT.relative_to(ROOT)}")
     except (OSError, UnicodeError, ValueError) as exc:
-        print(f"OneVoid 模板生成失败：{exc}", file=sys.stderr)
+        print(f"个人模板生成失败：{exc}", file=sys.stderr)
         return 1
     return 0
 

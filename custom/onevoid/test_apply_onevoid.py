@@ -26,7 +26,29 @@ class ApplyOneVoidTests(unittest.TestCase):
         rules = [line for line in result.splitlines() if line.startswith("ruleset=")]
         self.assertEqual(rules, list(module.RULES) + original_rules)
         self.assertEqual(result.count(module.GROUP), 1)
+        self.assertEqual(result.count(module.SAMSUNG_GROUP), 1)
         self.assertEqual(result.replace(module.BLOCK + "\n", "", 1), self.source)
+
+    def test_samsung_remote_domain_provider_and_policy_defaults(self):
+        result = module.render(self.source)
+        rules = [line for line in result.splitlines() if line.startswith("ruleset=")]
+        self.assertEqual(rules[:3], [
+            "ruleset=🎯 全球直连,[]DOMAIN,mail.onevoid.me",
+            "ruleset=🌌 OneVoid,[]DOMAIN-SUFFIX,onevoid.me",
+            "ruleset=📱 Samsung,clash-domain:https://raw.githubusercontent.com/"
+            "Keviin560/Shunt_Rules/main/rule/Mihomo/Samsung.mrs,86400",
+        ])
+        groups = {
+            fields[0].removeprefix("custom_proxy_group="): fields[1:]
+            for line in result.splitlines() if line.startswith("custom_proxy_group=")
+            for fields in [line.split("`")]
+        }
+        samsung = groups["📱 Samsung"]
+        self.assertEqual(samsung[:2], ["select", "[]♻️ 自动选择"])
+        self.assertEqual(groups["🌌 OneVoid"][:2], ["select", "[]🚀 手动选择"])
+        self.assertEqual(samsung.count("[]🎯 全球直连"), 1)
+        self.assertEqual(set(samsung[1:]), set(groups["🌌 OneVoid"][1:]))
+        self.assertEqual(len(samsung[1:]), len(set(samsung[1:])))
 
     def test_preserves_crlf_and_other_sections(self):
         source = self.source.replace("\n", "\r\n") + "[other]\r\nkey=value\r\n"
@@ -49,7 +71,11 @@ class ApplyOneVoidTests(unittest.TestCase):
         for addition in (
             "ruleset=other,[]DOMAIN-SUFFIX,onevoid.me",
             "custom_proxy_group=🌌 OneVoid`select`[]DIRECT",
+            "custom_proxy_group=📱 Samsung`select`[]DIRECT",
             "custom_proxy_group=🎯 全球直连`select`[]DIRECT",
+            "ruleset=other,[]GEOSITE,samsung",
+            "ruleset=other,clash-domain:https://example.invalid/Samsung.mrs,86400",
+            "; BEGIN OneVoid additions",
             module.BEGIN,
         ):
             with self.subTest(addition=addition), self.assertRaises(ValueError):

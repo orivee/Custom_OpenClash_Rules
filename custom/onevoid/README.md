@@ -1,4 +1,4 @@
-# OneVoid 个人模板
+# OneVoid / Samsung 个人模板
 
 上游标准模板为 `cfg/Custom_Clash.ini`，个人模板为本目录的
 `Custom_Clash.ini`。独立脚本 `py/apply_onevoid.py` 只读取本地上游模板，
@@ -6,13 +6,28 @@
 
 ## 规则
 
-两条规则优先于上游规则，按以下顺序匹配：
+个人规则优先于上游规则，按以下顺序匹配：
 
 1. `mail.onevoid.me` 使用 `🎯 全球直连`。
 2. `onevoid.me` 及其余子域名使用 `🌌 OneVoid` 策略组。
+3. Samsung 规则集中的域名使用 `📱 Samsung` 策略组。
 
 OneVoid 策略组提供手动选择、自动选择、香港、美国、日本、新加坡、
 台湾、韩国、全球直连和订阅节点候选；默认候选为手动选择。
+
+Samsung 策略组默认候选为 `♻️ 自动选择`，也可选择全球直连、手动选择、
+香港、美国、日本、新加坡、台湾、韩国或具体订阅节点。
+需要直连时，在 OpenClash 中将 `📱 Samsung` 切换为 `🎯 全球直连`。
+默认候选用于首次加载或没有已保存选择时，客户端可能保留已有的策略组选择。
+
+Samsung 域名完整跟随 [Keviin560/Shunt_Rules 的 Samsung 分类](https://github.com/Keviin560/Shunt_Rules)，
+通过远程 `clash-domain` 引用其
+[`Samsung.mrs`](https://raw.githubusercontent.com/Keviin560/Shunt_Rules/main/rule/Mihomo/Samsung.mrs)，
+规则提供器更新间隔为 86400 秒（24 小时）。生成脚本只写入引用地址，
+不下载或复制第三方规则；运行设备需能获取这个 GitHub Raw 地址。
+Samsung 分类范围由规则源维护，可能包含非三星品牌域名，例如可读列表中的
+`anrdoezrs.net` 和 `game-platform.net`，本模板不另行筛选。
+
 其他规则、策略组和测速设置跟随上游标准版。
 
 ## GitHub 自动同步
@@ -64,7 +79,7 @@ python py/apply_onevoid.py --check
 
 输出内容相同时，脚本不重新写文件。`--check` 不写文件：个人模板缺失、
 过期或上游不兼容时返回非零退出码。上游缺少所需策略组、存在重复组名、
-改变分段结构或引入 OneVoid 定制时，脚本报错并保留原个人模板。
+改变分段结构或引入 OneVoid / Samsung 定制时，脚本报错并保留原个人模板。
 检查不能判断所有上游变化是否兼容，例如同名策略组的行为变化仍需人工审查。
 
 确认生成结果后，可自行提交独立脚本、说明、测试与个人模板。
@@ -81,7 +96,8 @@ https://raw.githubusercontent.com/orivee/Custom_OpenClash_Rules/refs/heads/onevo
 ```
 
 远程地址可用需要先提交并推送相应分支。更新订阅后，确认 OneVoid 策略组
-及其候选正常加载，再分别验证邮件域名和其他 OneVoid 域名的实际分流。
+及 Samsung 策略组和候选正常加载，确认 Samsung 规则提供器加载成功，
+再分别验证邮件域名、其他 OneVoid 域名和 Samsung 域名的实际分流。
 脚本检查通过只代表模板生成一致，不代表订阅转换、运行配置或实际网络
 分流已验收。
 
