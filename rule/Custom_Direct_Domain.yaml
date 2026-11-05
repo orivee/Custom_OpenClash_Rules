@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1110
+# TOTAL: 1120
 
 payload:
   - '+.00333118.com'
@@ -206,6 +206,7 @@ payload:
   - '+.chaz.fun'
   - '+.checkip.dyndns.org'
   - '+.checkipv6.dyndns.org'
+  - '+.chengguodj.com'
   - '+.chenyuxia.com'
   - '+.cheriexsky.love'
   - '+.cheshire.top'
@@ -223,6 +224,7 @@ payload:
   - '+.ciyuancenter.cc'
   - '+.clivia.fun'
   - '+.cloudllll.com'
+  - '+.cloudseekr.com'
   - '+.cmbc.run'
   - '+.cmhk.com'
   - '+.cn-music.mefun.vip'
@@ -469,6 +471,7 @@ payload:
   - '+.hongxingdl.love'
   - '+.hongyanyanbaihuo.online'
   - '+.hooos.com'
+  - '+.hoyoget.com'
   - '+.hpr7e.top'
   - '+.hprtupgrade.com'
   - '+.hrhgstock.com'
@@ -480,6 +483,7 @@ payload:
   - '+.htkgsx.com'
   - '+.huabangshou.com'
   - '+.huacheng2025.com'
+  - '+.huangguoai.ai'
   - '+.hub.crdz.gq'
   - '+.hub.gitmirror.com'
   - '+.hub.rat.dev'
@@ -660,6 +664,7 @@ payload:
   - '+.miraiemby.com'
   - '+.mixly.org'
   - '+.mobai.sbs'
+  - '+.mochadj.com'
   - '+.moctory.com'
   - '+.modaiyun.com'
   - '+.modelscope.net'
@@ -678,6 +683,7 @@ payload:
   - '+.myshopex.com'
   - '+.mystery0.vip'
   - '+.myviewcloud.com'
+  - '+.mzbcars.com'
   - '+.naitanghuyu.com'
   - '+.naixi.com'
   - '+.nanhuabx.com'
@@ -867,6 +873,7 @@ payload:
   - '+.sxlljm.com'
   - '+.sxstczx.com'
   - '+.sy1.top'
+  - '+.sysbbs.com'
   - '+.szfx.top'
   - '+.szmtzd.com'
   - '+.sztopten.com'
@@ -878,6 +885,7 @@ payload:
   - '+.talk-cloud.net'
   - '+.tange365.com'
   - '+.tangguobaohe.com'
+  - '+.taosirenli.top'
   - '+.taotoken.net'
   - '+.tclai.top'
   - '+.tcp.mk'
@@ -1046,6 +1054,7 @@ payload:
   - '+.xzzhtc.com'
   - '+.yayi360.com'
   - '+.ycjintou.com'
+  - '+.ycoo.net'
   - '+.ycyct.com'
   - '+.ydayc.com'
   - '+.yeguodj.com'
@@ -1063,6 +1072,7 @@ payload:
   - '+.ynsj001.com'
   - '+.yongyu.xyz'
   - '+.yooc.me'
+  - '+.youkuimg.icu'
   - '+.youqian.pro'
   - '+.youzhiyouxing.com'
   - '+.yrqvlchq5.com'
