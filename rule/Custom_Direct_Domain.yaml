@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1152
+# TOTAL: 1155
 
 payload:
   - '+.00333118.com'
@@ -355,6 +355,7 @@ payload:
   - '+.ft07.com'
   - '+.ftqq.com'
   - '+.ftsup.com'
+  - '+.fullo.top'
   - '+.functorz.com'
   - '+.funlinkads.com'
   - '+.funmob.top'
@@ -379,6 +380,7 @@ payload:
   - '+.geektool.top'
   - '+.gegeselect.hk'
   - '+.gelaiyun.net'
+  - '+.gexuanyi.top'
   - '+.ggbond.org'
   - '+.gh-proxy.com'
   - '+.gh.con.sh'
@@ -990,6 +992,7 @@ payload:
   - '+.vlan5.com'
   - '+.volcanomob.com'
   - '+.vpsjyz.com'
+  - '+.vryfh.top'
   - '+.vtools.online'
   - '+.vv1865.com'
   - '+.vvhan.com'
