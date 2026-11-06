@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1159
+# TOTAL: 1166
 
 payload:
   - DOMAIN-KEYWORD,m-team
@@ -85,6 +85,7 @@ payload:
   - DOMAIN-SUFFIX,985hezi.com
   - DOMAIN-SUFFIX,998tool.com
   - DOMAIN-SUFFIX,9999jt.com
+  - DOMAIN-SUFFIX,a047.com
   - DOMAIN-SUFFIX,a0d.top
   - DOMAIN-SUFFIX,aaawz.cc
   - DOMAIN-SUFFIX,abctougu.com
@@ -366,6 +367,7 @@ payload:
   - DOMAIN-SUFFIX,fzshouji.com
   - DOMAIN-SUFFIX,fzvcolco.com
   - DOMAIN-SUFFIX,fzwqq.com
+  - DOMAIN-SUFFIX,g7c3wqc.cc
   - DOMAIN-SUFFIX,gacicv.com
   - DOMAIN-SUFFIX,gaishitongshu.com
   - DOMAIN-SUFFIX,game.maj-soul.com
@@ -492,6 +494,7 @@ payload:
   - DOMAIN-SUFFIX,hshh.org
   - DOMAIN-SUFFIX,hstbroker.com
   - DOMAIN-SUFFIX,hszq6.com
+  - DOMAIN-SUFFIX,htfzsdk.com
   - DOMAIN-SUFFIX,htkgsx.com
   - DOMAIN-SUFFIX,huabangshou.com
   - DOMAIN-SUFFIX,huacheng2025.com
@@ -607,12 +610,14 @@ payload:
   - DOMAIN-SUFFIX,kudashi.com
   - DOMAIN-SUFFIX,kukongjian.com
   - DOMAIN-SUFFIX,kuktxu.com
+  - DOMAIN-SUFFIX,kuleu.com
   - DOMAIN-SUFFIX,kwai.net
   - DOMAIN-SUFFIX,lanyun.net
   - DOMAIN-SUFFIX,laogongju.com
   - DOMAIN-SUFFIX,latexlive.com
   - DOMAIN-SUFFIX,laupqc.com
   - DOMAIN-SUFFIX,ldboost.com
+  - DOMAIN-SUFFIX,ldd678.com
   - DOMAIN-SUFFIX,leadweigh.com
   - DOMAIN-SUFFIX,leelen.com
   - DOMAIN-SUFFIX,letaoedu.com
@@ -1012,6 +1017,7 @@ payload:
   - DOMAIN-SUFFIX,wmvbo.com
   - DOMAIN-SUFFIX,wologic.net
   - DOMAIN-SUFFIX,wpurl.cc
+  - DOMAIN-SUFFIX,wshifen.com
   - DOMAIN-SUFFIX,wt2zxk.com
   - DOMAIN-SUFFIX,wty-yy.top
   - DOMAIN-SUFFIX,wuhanjijin.com
@@ -1139,6 +1145,7 @@ payload:
   - DOMAIN-SUFFIX,zqin758.xyz
   - DOMAIN-SUFFIX,zsytit.com
   - DOMAIN-SUFFIX,ztytech.com
+  - DOMAIN-SUFFIX,zudanje.com
   - DOMAIN-SUFFIX,zuidazym3u8.com
   - DOMAIN-SUFFIX,zuobiao.press
   - DOMAIN-SUFFIX,zxp7.cc

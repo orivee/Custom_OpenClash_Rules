@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1144
+# TOTAL: 1151
 
 payload:
   - '+.00333118.com'
@@ -82,6 +82,7 @@ payload:
   - '+.985hezi.com'
   - '+.998tool.com'
   - '+.9999jt.com'
+  - '+.a047.com'
   - '+.a0d.top'
   - '+.aaawz.cc'
   - '+.abctougu.com'
@@ -363,6 +364,7 @@ payload:
   - '+.fzshouji.com'
   - '+.fzvcolco.com'
   - '+.fzwqq.com'
+  - '+.g7c3wqc.cc'
   - '+.gacicv.com'
   - '+.gaishitongshu.com'
   - '+.game.maj-soul.com'
@@ -489,6 +491,7 @@ payload:
   - '+.hshh.org'
   - '+.hstbroker.com'
   - '+.hszq6.com'
+  - '+.htfzsdk.com'
   - '+.htkgsx.com'
   - '+.huabangshou.com'
   - '+.huacheng2025.com'
@@ -604,12 +607,14 @@ payload:
   - '+.kudashi.com'
   - '+.kukongjian.com'
   - '+.kuktxu.com'
+  - '+.kuleu.com'
   - '+.kwai.net'
   - '+.lanyun.net'
   - '+.laogongju.com'
   - '+.latexlive.com'
   - '+.laupqc.com'
   - '+.ldboost.com'
+  - '+.ldd678.com'
   - '+.leadweigh.com'
   - '+.leelen.com'
   - '+.letaoedu.com'
@@ -1009,6 +1014,7 @@ payload:
   - '+.wmvbo.com'
   - '+.wologic.net'
   - '+.wpurl.cc'
+  - '+.wshifen.com'
   - '+.wt2zxk.com'
   - '+.wty-yy.top'
   - '+.wuhanjijin.com'
@@ -1136,6 +1142,7 @@ payload:
   - '+.zqin758.xyz'
   - '+.zsytit.com'
   - '+.ztytech.com'
+  - '+.zudanje.com'
   - '+.zuidazym3u8.com'
   - '+.zuobiao.press'
   - '+.zxp7.cc'
