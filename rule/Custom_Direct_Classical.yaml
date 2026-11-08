@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1193
+# TOTAL: 1198
 
 payload:
   - DOMAIN-KEYWORD,m-team
@@ -514,6 +514,7 @@ payload:
   - DOMAIN-SUFFIX,huabangshou.com
   - DOMAIN-SUFFIX,huacheng2025.com
   - DOMAIN-SUFFIX,huangguoai.ai
+  - DOMAIN-SUFFIX,huangyusz.space
   - DOMAIN-SUFFIX,hub.crdz.gq
   - DOMAIN-SUFFIX,hub.gitmirror.com
   - DOMAIN-SUFFIX,hub.rat.dev
@@ -585,6 +586,7 @@ payload:
   - DOMAIN-SUFFIX,jieyunwangluokeji.com
   - DOMAIN-SUFFIX,jiliuwang.net
   - DOMAIN-SUFFIX,jingheiot.com
+  - DOMAIN-SUFFIX,jingxi-wl.com
   - DOMAIN-SUFFIX,jinsan168.com
   - DOMAIN-SUFFIX,jinzanzan.com
   - DOMAIN-SUFFIX,jiqw.com
@@ -833,6 +835,7 @@ payload:
   - DOMAIN-SUFFIX,qmeng.top
   - DOMAIN-SUFFIX,qmpx.net
   - DOMAIN-SUFFIX,qpe27.top
+  - DOMAIN-SUFFIX,qswpt.com
   - DOMAIN-SUFFIX,quanxinfu.com
   - DOMAIN-SUFFIX,quanzhua.com
   - DOMAIN-SUFFIX,quxuanshu.com
@@ -1000,6 +1003,7 @@ payload:
   - DOMAIN-SUFFIX,ugediao.com
   - DOMAIN-SUFFIX,ugnas.cloud
   - DOMAIN-SUFFIX,ulife.group
+  - DOMAIN-SUFFIX,uploadlog.com
   - DOMAIN-SUFFIX,us.ci
   - DOMAIN-SUFFIX,v-koolsh.com
   - DOMAIN-SUFFIX,vanjee.net
@@ -1120,6 +1124,7 @@ payload:
   - DOMAIN-SUFFIX,yi-ll.com
   - DOMAIN-SUFFIX,yibanbianji.com
   - DOMAIN-SUFFIX,yicaiykt.com
+  - DOMAIN-SUFFIX,yikeapi.com
   - DOMAIN-SUFFIX,yingshi.dog
   - DOMAIN-SUFFIX,yiso.fun
   - DOMAIN-SUFFIX,yixc.com
