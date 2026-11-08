@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1170
+# TOTAL: 1178
 
 payload:
   - '+.00333118.com'
@@ -31,6 +31,7 @@ payload:
   - '+.365ting.com'
   - '+.365wp.top'
   - '+.3688baihuo.com'
+  - '+.373979.cc'
   - '+.37rk0rihje.com'
   - '+.3ced.top'
   - '+.3d-apollo.com'
@@ -288,6 +289,7 @@ payload:
   - '+.dircleaner.com'
   - '+.divoiotcloud.com'
   - '+.diyiedu.com'
+  - '+.dldcsj.com'
   - '+.dnshe.com'
   - '+.docker.1panel.live'
   - '+.docker.kejilion.pro'
@@ -313,6 +315,7 @@ payload:
   - '+.ec766.com'
   - '+.eceshi.com'
   - '+.ectaiping.com'
+  - '+.edyr2ip7zg.com'
   - '+.eezygoapi.com'
   - '+.ehdjskx.com'
   - '+.einfo-tech.com'
@@ -535,6 +538,7 @@ payload:
   - '+.idazhe.net'
   - '+.idphotoplus.com'
   - '+.idsduf.com'
+  - '+.ifawj9hvvl.com'
   - '+.ifconfig.co'
   - '+.ifengmap.com'
   - '+.ifish7.com'
@@ -593,6 +597,7 @@ payload:
   - '+.jyg4352.cc'
   - '+.jzagile.com'
   - '+.jzgj.com'
+  - '+.jztysg.com'
   - '+.kaihong.com'
   - '+.kaijiacloud.com'
   - '+.kaijiejinrong.com'
@@ -637,6 +642,7 @@ payload:
   - '+.lg3000.top'
   - '+.lhndksn.com'
   - '+.lianguo-tech.com'
+  - '+.libtv.com'
   - '+.lightmake.site'
   - '+.linka2a.net'
   - '+.linkcircle.net'
@@ -710,6 +716,7 @@ payload:
   - '+.msftconnecttest.com'
   - '+.msftncsi.com'
   - '+.mslmc.net'
+  - '+.mssdag.com'
   - '+.mtaokj.com'
   - '+.muhemob.com'
   - '+.mulingyuer.com'
@@ -906,6 +913,7 @@ payload:
   - '+.sun-panel.top'
   - '+.sunrisecontent.akamaized.net'
   - '+.suntl.com'
+  - '+.superpande.com'
   - '+.susudesu.com'
   - '+.suto.top'
   - '+.suu-fun.com'

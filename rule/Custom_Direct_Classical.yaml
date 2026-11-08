@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1185
+# TOTAL: 1193
 
 payload:
   - DOMAIN-KEYWORD,m-team
@@ -34,6 +34,7 @@ payload:
   - DOMAIN-SUFFIX,365ting.com
   - DOMAIN-SUFFIX,365wp.top
   - DOMAIN-SUFFIX,3688baihuo.com
+  - DOMAIN-SUFFIX,373979.cc
   - DOMAIN-SUFFIX,37rk0rihje.com
   - DOMAIN-SUFFIX,3ced.top
   - DOMAIN-SUFFIX,3d-apollo.com
@@ -291,6 +292,7 @@ payload:
   - DOMAIN-SUFFIX,dircleaner.com
   - DOMAIN-SUFFIX,divoiotcloud.com
   - DOMAIN-SUFFIX,diyiedu.com
+  - DOMAIN-SUFFIX,dldcsj.com
   - DOMAIN-SUFFIX,dnshe.com
   - DOMAIN-SUFFIX,docker.1panel.live
   - DOMAIN-SUFFIX,docker.kejilion.pro
@@ -316,6 +318,7 @@ payload:
   - DOMAIN-SUFFIX,ec766.com
   - DOMAIN-SUFFIX,eceshi.com
   - DOMAIN-SUFFIX,ectaiping.com
+  - DOMAIN-SUFFIX,edyr2ip7zg.com
   - DOMAIN-SUFFIX,eezygoapi.com
   - DOMAIN-SUFFIX,ehdjskx.com
   - DOMAIN-SUFFIX,einfo-tech.com
@@ -538,6 +541,7 @@ payload:
   - DOMAIN-SUFFIX,idazhe.net
   - DOMAIN-SUFFIX,idphotoplus.com
   - DOMAIN-SUFFIX,idsduf.com
+  - DOMAIN-SUFFIX,ifawj9hvvl.com
   - DOMAIN-SUFFIX,ifconfig.co
   - DOMAIN-SUFFIX,ifengmap.com
   - DOMAIN-SUFFIX,ifish7.com
@@ -596,6 +600,7 @@ payload:
   - DOMAIN-SUFFIX,jyg4352.cc
   - DOMAIN-SUFFIX,jzagile.com
   - DOMAIN-SUFFIX,jzgj.com
+  - DOMAIN-SUFFIX,jztysg.com
   - DOMAIN-SUFFIX,kaihong.com
   - DOMAIN-SUFFIX,kaijiacloud.com
   - DOMAIN-SUFFIX,kaijiejinrong.com
@@ -640,6 +645,7 @@ payload:
   - DOMAIN-SUFFIX,lg3000.top
   - DOMAIN-SUFFIX,lhndksn.com
   - DOMAIN-SUFFIX,lianguo-tech.com
+  - DOMAIN-SUFFIX,libtv.com
   - DOMAIN-SUFFIX,lightmake.site
   - DOMAIN-SUFFIX,linka2a.net
   - DOMAIN-SUFFIX,linkcircle.net
@@ -713,6 +719,7 @@ payload:
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-SUFFIX,msftncsi.com
   - DOMAIN-SUFFIX,mslmc.net
+  - DOMAIN-SUFFIX,mssdag.com
   - DOMAIN-SUFFIX,mtaokj.com
   - DOMAIN-SUFFIX,muhemob.com
   - DOMAIN-SUFFIX,mulingyuer.com
@@ -909,6 +916,7 @@ payload:
   - DOMAIN-SUFFIX,sun-panel.top
   - DOMAIN-SUFFIX,sunrisecontent.akamaized.net
   - DOMAIN-SUFFIX,suntl.com
+  - DOMAIN-SUFFIX,superpande.com
   - DOMAIN-SUFFIX,susudesu.com
   - DOMAIN-SUFFIX,suto.top
   - DOMAIN-SUFFIX,suu-fun.com
