@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1178
+# TOTAL: 1183
 
 payload:
   - '+.00333118.com'
@@ -511,6 +511,7 @@ payload:
   - '+.huabangshou.com'
   - '+.huacheng2025.com'
   - '+.huangguoai.ai'
+  - '+.huangyusz.space'
   - '+.hub.crdz.gq'
   - '+.hub.gitmirror.com'
   - '+.hub.rat.dev'
@@ -582,6 +583,7 @@ payload:
   - '+.jieyunwangluokeji.com'
   - '+.jiliuwang.net'
   - '+.jingheiot.com'
+  - '+.jingxi-wl.com'
   - '+.jinsan168.com'
   - '+.jinzanzan.com'
   - '+.jiqw.com'
@@ -830,6 +832,7 @@ payload:
   - '+.qmeng.top'
   - '+.qmpx.net'
   - '+.qpe27.top'
+  - '+.qswpt.com'
   - '+.quanxinfu.com'
   - '+.quanzhua.com'
   - '+.quxuanshu.com'
@@ -997,6 +1000,7 @@ payload:
   - '+.ugediao.com'
   - '+.ugnas.cloud'
   - '+.ulife.group'
+  - '+.uploadlog.com'
   - '+.us.ci'
   - '+.v-koolsh.com'
   - '+.vanjee.net'
@@ -1117,6 +1121,7 @@ payload:
   - '+.yi-ll.com'
   - '+.yibanbianji.com'
   - '+.yicaiykt.com'
+  - '+.yikeapi.com'
   - '+.yingshi.dog'
   - '+.yiso.fun'
   - '+.yixc.com'
