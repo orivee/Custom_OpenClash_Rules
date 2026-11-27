@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1332
+# TOTAL: 1335
 
 payload:
   - DOMAIN-KEYWORD,m-team
@@ -393,6 +393,7 @@ payload:
   - DOMAIN-SUFFIX,fhendj.com
   - DOMAIN-SUFFIX,fileh.xyz
   - DOMAIN-SUFFIX,filej.xyz
+  - DOMAIN-SUFFIX,fitkingshop.com
   - DOMAIN-SUFFIX,fjdejing.com
   - DOMAIN-SUFFIX,fjpit.com
   - DOMAIN-SUFFIX,flingtrainer.com
@@ -483,6 +484,7 @@ payload:
   - DOMAIN-SUFFIX,gta6keji.com
   - DOMAIN-SUFFIX,gtakm.com
   - DOMAIN-SUFFIX,gtazhiyu.com
+  - DOMAIN-SUFFIX,gtl-test.com
   - DOMAIN-SUFFIX,guaitao.cc
   - DOMAIN-SUFFIX,guang233.com
   - DOMAIN-SUFFIX,guangshiting.top
@@ -799,7 +801,6 @@ payload:
   - DOMAIN-SUFFIX,mulingyuer.com
   - DOMAIN-SUFFIX,myfenghua.com
   - DOMAIN-SUFFIX,mykuaidi.com
-  - DOMAIN-SUFFIX,mypikpak.net
   - DOMAIN-SUFFIX,myrny.xin
   - DOMAIN-SUFFIX,myshopex.com
   - DOMAIN-SUFFIX,mystery0.vip
@@ -1065,6 +1066,7 @@ payload:
   - DOMAIN-SUFFIX,tianruo.xyz
   - DOMAIN-SUFFIX,timbrd.com
   - DOMAIN-SUFFIX,tixue.net
+  - DOMAIN-SUFFIX,tjfuxinjia.com
   - DOMAIN-SUFFIX,tjnhscgs.com
   - DOMAIN-SUFFIX,tlkg.com
   - DOMAIN-SUFFIX,tluyou.com
@@ -1288,6 +1290,7 @@ payload:
   - DOMAIN-SUFFIX,zhi10.com
   - DOMAIN-SUFFIX,zhidianmijin.top
   - DOMAIN-SUFFIX,zhiexa.com
+  - DOMAIN-SUFFIX,zhijiwenhua.xyz
   - DOMAIN-SUFFIX,zhituwujie.com
   - DOMAIN-SUFFIX,zhixingyunke.com
   - DOMAIN-SUFFIX,zhongancloud.com
