@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1328
+# TOTAL: 1335
 
 payload:
   - '+.00333118.com'
@@ -12,6 +12,7 @@ payload:
   - '+.0734cn.top'
   - '+.0759mall.com'
   - '+.08137tabw.com'
+  - '+.09517260.com'
   - '+.10fuzhu.com'
   - '+.10laodian.com'
   - '+.112114.eu.org'
@@ -179,6 +180,7 @@ payload:
   - '+.axuex.top'
   - '+.azpromotion.com'
   - '+.azurpromilia.com'
+  - '+.b675211.com'
   - '+.b7f3192.com'
   - '+.ba-hospital.com'
   - '+.babawar.com'
@@ -267,6 +269,7 @@ payload:
   - '+.chushi.cool'
   - '+.chyqaq.online'
   - '+.ciallo.party'
+  - '+.cilikongjian.com'
   - '+.cilizhai.net'
   - '+.cindy.app'
   - '+.ciyuancenter.cc'
@@ -378,6 +381,7 @@ payload:
   - '+.fb71ef91e1014.beer'
   - '+.fdfinvoice.com'
   - '+.feihengip.com'
+  - '+.feiniaobt.com'
   - '+.feiniugo.com'
   - '+.feiyujiaju.com'
   - '+.feizhiyi.com'
@@ -416,6 +420,7 @@ payload:
   - '+.fuyinkeji.top'
   - '+.fuziche.com'
   - '+.fzedu.pub'
+  - '+.fzhygame.com'
   - '+.fzshouji.com'
   - '+.fzvcolco.com'
   - '+.fzwqq.com'
@@ -459,6 +464,7 @@ payload:
   - '+.gjtool.com'
   - '+.gmoj.net'
   - '+.gmya.net'
+  - '+.gny.net'
   - '+.goalmapapp.com'
   - '+.goka.top'
   - '+.gongxiangjizhang.com'
@@ -946,6 +952,7 @@ payload:
   - '+.ruijie.com'
   - '+.rxcrs.com'
   - '+.saduck.top'
+  - '+.safecaptcha.com'
   - '+.sanligu.top'
   - '+.sapphiretech.com'
   - '+.sbtia.com'

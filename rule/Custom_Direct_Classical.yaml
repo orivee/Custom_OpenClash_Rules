@@ -1,7 +1,7 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
-# TOTAL: 1343
+# TOTAL: 1350
 
 payload:
   - DOMAIN-KEYWORD,m-team
@@ -15,6 +15,7 @@ payload:
   - DOMAIN-SUFFIX,0734cn.top
   - DOMAIN-SUFFIX,0759mall.com
   - DOMAIN-SUFFIX,08137tabw.com
+  - DOMAIN-SUFFIX,09517260.com
   - DOMAIN-SUFFIX,10fuzhu.com
   - DOMAIN-SUFFIX,10laodian.com
   - DOMAIN-SUFFIX,112114.eu.org
@@ -182,6 +183,7 @@ payload:
   - DOMAIN-SUFFIX,axuex.top
   - DOMAIN-SUFFIX,azpromotion.com
   - DOMAIN-SUFFIX,azurpromilia.com
+  - DOMAIN-SUFFIX,b675211.com
   - DOMAIN-SUFFIX,b7f3192.com
   - DOMAIN-SUFFIX,ba-hospital.com
   - DOMAIN-SUFFIX,babawar.com
@@ -270,6 +272,7 @@ payload:
   - DOMAIN-SUFFIX,chushi.cool
   - DOMAIN-SUFFIX,chyqaq.online
   - DOMAIN-SUFFIX,ciallo.party
+  - DOMAIN-SUFFIX,cilikongjian.com
   - DOMAIN-SUFFIX,cilizhai.net
   - DOMAIN-SUFFIX,cindy.app
   - DOMAIN-SUFFIX,ciyuancenter.cc
@@ -381,6 +384,7 @@ payload:
   - DOMAIN-SUFFIX,fb71ef91e1014.beer
   - DOMAIN-SUFFIX,fdfinvoice.com
   - DOMAIN-SUFFIX,feihengip.com
+  - DOMAIN-SUFFIX,feiniaobt.com
   - DOMAIN-SUFFIX,feiniugo.com
   - DOMAIN-SUFFIX,feiyujiaju.com
   - DOMAIN-SUFFIX,feizhiyi.com
@@ -419,6 +423,7 @@ payload:
   - DOMAIN-SUFFIX,fuyinkeji.top
   - DOMAIN-SUFFIX,fuziche.com
   - DOMAIN-SUFFIX,fzedu.pub
+  - DOMAIN-SUFFIX,fzhygame.com
   - DOMAIN-SUFFIX,fzshouji.com
   - DOMAIN-SUFFIX,fzvcolco.com
   - DOMAIN-SUFFIX,fzwqq.com
@@ -462,6 +467,7 @@ payload:
   - DOMAIN-SUFFIX,gjtool.com
   - DOMAIN-SUFFIX,gmoj.net
   - DOMAIN-SUFFIX,gmya.net
+  - DOMAIN-SUFFIX,gny.net
   - DOMAIN-SUFFIX,goalmapapp.com
   - DOMAIN-SUFFIX,goka.top
   - DOMAIN-SUFFIX,gongxiangjizhang.com
@@ -949,6 +955,7 @@ payload:
   - DOMAIN-SUFFIX,ruijie.com
   - DOMAIN-SUFFIX,rxcrs.com
   - DOMAIN-SUFFIX,saduck.top
+  - DOMAIN-SUFFIX,safecaptcha.com
   - DOMAIN-SUFFIX,sanligu.top
   - DOMAIN-SUFFIX,sapphiretech.com
   - DOMAIN-SUFFIX,sbtia.com
